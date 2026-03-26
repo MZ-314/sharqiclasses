@@ -25,13 +25,18 @@
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;  /* fix mobile horizontal overflow */
+  max-width: 100%;
+}
 body {
   font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
   color: var(--text);
   background: var(--white);
   overflow-x: hidden;
+  max-width: 100%;
   line-height: 1.6;
 }
 img { max-width: 100%; display: block; }
@@ -182,6 +187,8 @@ em { font-style: normal; color: var(--green); }
 .hero {
   position: relative;
   min-height: 92vh;
+  width: 100%;
+  max-width: 100vw;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -189,12 +196,17 @@ em { font-style: normal; color: var(--green); }
 .hero-slides {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .hero-slide {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
 }
@@ -263,7 +275,10 @@ em { font-style: normal; color: var(--green); }
   border-radius: 12px;
   font-size: 0.88rem;
   font-weight: 700;
-  max-width: 500px;
+  max-width: 100%;
+  width: fit-content;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 .hero-offer-pill i { flex-shrink: 0; }
 .slide-dots {
@@ -935,20 +950,36 @@ em { font-style: normal; color: var(--green); }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
   .navbar { position: relative; }
+  /* Hero mobile fix */
+  .hero { min-height: 100svh; min-height: 100vh; }
+  .hero-inner { padding: 72px 0 80px; }
+  .hero-text h1 { max-width: 100%; font-size: clamp(2rem, 8vw, 2.8rem); }
+  .hero-text p { max-width: 100%; font-size: 0.95rem; }
+  .hero-badge { font-size: 0.72rem; padding: 7px 14px; }
+  .hero-offer-pill { font-size: 0.8rem; padding: 10px 16px; width: 100%; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  /* About */
   .about-inner { grid-template-columns: 1fr; gap: 40px; }
   .about-photo-wrap { max-width: 280px; margin: 0 auto; }
+  /* Batches */
   .batch-cards { grid-template-columns: 1fr; }
   .oneonone-card { grid-column: unset; }
+  /* Fees */
   .fees-inner { grid-template-columns: 1fr; }
   .fees-card-wrap { flex-direction: row; flex-wrap: wrap; }
   .fees-card { flex: 1; min-width: 260px; }
+  /* Contact */
   .contact-inner { grid-template-columns: 1fr; }
+  /* Footer */
   .footer-inner { grid-template-columns: 1fr 1fr; padding-top: 48px; }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
+  /* Steps */
   .steps { gap: 0; }
   .step-arrow { display: none; }
   .step { min-width: 140px; }
+  /* Misc */
   .offer-inner { flex-direction: column; text-align: center; }
   .offer-text { flex-direction: column; }
 }
