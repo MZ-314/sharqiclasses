@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharqi Classes | Expert Home Tuition – Katabari, Guwahati</title>
+  <meta name="description" content="Sharqi Classes offers expert home tuition for Class 9 & 10 in Maths, Science, Advanced Maths & Computer Science. New batches starting April 2026 in Katabari, Guwahati." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== CALLBACK MODAL ===== -->
+  <div class="modal-overlay" id="callbackModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-label="Request a Callback">
+      <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="modal-icon"><i class="fa-solid fa-phone-volume"></i></div>
+        <h3>Request a Callback</h3>
+        <p>Leave your details and I'll call you back within a few hours.</p>
+      </div>
+      <!-- FormSubmit.co — sends form data to sharqiclasses@gmail.com, no backend needed -->
+      <form class="callback-form" id="callbackForm"
+        action="https://formsubmit.co/sharqiclasses@gmail.com"
+        method="POST">
+        <input type="hidden" name="_subject" value="New Callback Request – Sharqi Classes" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_autoresponse" value="Hi! Thanks for reaching out to Sharqi Classes. I've received your callback request and will get in touch soon. – Sharqi Classes" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name <span class="req">*</span></label>
+            <input type="text" name="Name" placeholder="Parent / Student name" required />
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Phone <span class="req">*</span></label>
+            <input type="tel" name="Phone" placeholder="+91 91011 70697" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Student's Class <span class="req">*</span></label>
+            <select name="Class" required>
+              <option value="">Select class</option>
+              <option>Class 9</option>
+              <option>Class 10</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Board</label>
+            <select name="Board">
+              <option value="">Select board</option>
+              <option>SEBA (Assam Board)</option>
+              <option>CBSE</option>
+              <option>ICSE</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Subjects of Interest <span class="req">*</span></label>
+          <div class="checkbox-grid">
+            <label class="check-item"><input type="checkbox" name="Subjects" value="Mathematics" /><span>Mathematics</span></label>
+            <label class="check-item"><input type="checkbox" name="Subjects" value="Science" /><span>Science</span></label>
+            <label class="check-item"><input type="checkbox" name="Subjects" value="Computer Science" /><span>Computer Science</span></label>
+            <label class="check-item"><input type="checkbox" name="Subjects" value="Advanced Mathematics (SEBA only)" /><span>Advanced Maths <em class="seba-tag">SEBA only</em></span></label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Interested In</label>
+            <select name="Interest">
+              <option value="">Select type</option>
+              <option>Batch 1 – Class 10 (Physical)</option>
+              <option>Batch 2 – Class 9 (Physical)</option>
+              <option>One-on-One Home Tuition</option>
+              <option>Just want more info</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Best Time to Call</label>
+            <select name="Preferred Time">
+              <option value="">Any time is fine</option>
+              <option>Morning (9 AM – 12 PM)</option>
+              <option>Afternoon (12 PM – 4 PM)</option>
+              <option>Evening (4 PM – 8 PM)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-yellow btn-full" id="cbSubmitBtn">
+          <i class="fa-solid fa-paper-plane"></i> Request Callback
+        </button>
+        <p class="form-note"><i class="fa-solid fa-lock"></i> Your details are private and only used to contact you.</p>
+      </form>
+
+      <div class="form-success" id="cbSuccess" style="display:none;">
+        <i class="fa-solid fa-circle-check"></i>
+        <h4>Got it! I'll call you soon.</h4>
+        <p>You can also WhatsApp me directly at <a href="https://wa.me/919101170697" target="_blank">+91 91011 70697</a> for a faster response.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-logo">
+        <!-- REPLACE src with your Cloudinary URL after uploading logo -->
+        <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-26_at_14_28_00.jpeg" alt="Sharqi Classes" class="logo-img" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#batches">Batches</a>
+        <a href="#fees">Fees</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline-green btn-sm callback-trigger" id="navCallbackBtn">
+          <i class="fa-solid fa-phone"></i> Callback
+        </button>
+        <a href="#batches" class="btn btn-yellow nav-cta">Join a Batch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <!-- REPLACE these 4 URLs with your own Cloudinary image URLs -->
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge"><span class="badge-dot"></span> New Batches Starting April 2026</div>
+        <h1>Where <span class="highlight">Clarity</span> Meets<br/><span class="highlight">Commitment</span></h1>
+        <p>Expert home tuition for Class 9 & 10 in Maths, Science, Computer Science & Advanced Maths (SEBA). Small batches. Real attention. Katabari, Guwahati.</p>
+        <div class="hero-actions">
+          <a href="#batches" class="btn btn-yellow btn-lg">Explore Batches <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://wa.me/919101170697?text=Hi!+I%27m+interested+in+Sharqi+Classes." target="_blank" class="btn btn-outline-white btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+        <div class="hero-offer-pill">
+          <i class="fa-solid fa-tag"></i>
+          <span><strong>Inauguration Offer:</strong> 30% OFF for the first 5 students per batch!</span>
+        </div>
+      </div>
+      <div class="slide-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container about-inner">
+      <div class="about-photo-col">
+        <div class="about-photo-wrap">
+          <!--
+            REPLACE this placeholder with your real photo after uploading to Cloudinary:
+            <img src="YOUR_CLOUDINARY_URL" alt="Your Name" class="about-real-photo" />
+            Add to CSS: .about-real-photo { width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:24px 4px 24px 4px; }
+          -->
+          <div class="about-photo-placeholder">
+            <i class="fa-solid fa-user-tie"></i>
+            <p>Your Photo Here</p>
+            <small>Upload to Cloudinary &amp; replace src</small>
+          </div>
+          <div class="about-accent-block"></div>
+        </div>
+      </div>
+
+      <div class="about-text-col">
+        <p class="section-label"><i class="fa-solid fa-chalkboard-user"></i> About Your Tutor</p>
+        <h2>Hi, I'm <em>[Your Name]</em> —<br/> Your Dedicated Tutor</h2>
+        <p class="about-lead">I'm passionate about making concepts click for every student. My approach: no rote learning, no shortcuts — just deep understanding built step by step, at your pace.</p>
+        <p>
+          <!-- REPLACE this paragraph with your actual bio -->
+          I specialise in Mathematics, Science, Computer Science, and Advanced Mathematics (SEBA board) for Class 9 and 10 students. I keep batches deliberately small so every student gets real attention. Whether you're struggling with a concept or aiming for top marks, I'm here to help — from my home in Katabari, Guwahati.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-chip"><i class="fa-solid fa-calculator"></i> Mathematics &amp; Adv. Maths</div>
+          <div class="highlight-chip"><i class="fa-solid fa-atom"></i> Science Specialist</div>
+          <div class="highlight-chip"><i class="fa-solid fa-laptop-code"></i> Computer Science</div>
+          <div class="highlight-chip"><i class="fa-solid fa-users-line"></i> Small Batch Sizes</div>
+          <div class="highlight-chip"><i class="fa-solid fa-book-open-reader"></i> SEBA · CBSE · ICSE</div>
+          <div class="highlight-chip"><i class="fa-solid fa-location-dot"></i> Katabari, Guwahati</div>
+        </div>
+        <div class="about-social">
+          <span>Connect with me:</span>
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919101170697" target="_blank" aria-label="WhatsApp" class="social-btn whatsapp-btn"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUBJECTS ===== -->
+  <section class="subjects section" id="subjects">
+    <div class="subjects-bg"></div>
+    <div class="container">
+      <div class="section-header light">
+        <p class="section-label light"><i class="fa-solid fa-book-open"></i> What I Teach</p>
+        <h2 style="color:#fff;">Subjects <em>Offered</em></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.72);">Class 9 &amp; 10 · SEBA · CBSE · ICSE</p>
+      </div>
+      <div class="subject-grid">
+        <div class="subject-card">
+          <div class="subject-icon"><i class="fa-solid fa-square-root-variable"></i></div>
+          <h3>Mathematics</h3>
+          <p>Core maths for Class 9 &amp; 10 — algebra, geometry, trigonometry, statistics, number systems and more. Strong foundation building for board exams.</p>
+          <div class="subject-boards"><span>SEBA</span><span>CBSE</span><span>ICSE</span></div>
+        </div>
+
+        <div class="subject-card subject-featured">
+          <div class="subject-badge">SEBA Only</div>
+          <div class="subject-icon"><i class="fa-solid fa-infinity"></i></div>
+          <h3>Advanced Mathematics</h3>
+          <p>An exclusive subject in the SEBA (Assam Board) curriculum for Class 9 &amp; 10. Covers deeper mathematical concepts and advanced problem-solving — only for Assam Board students.</p>
+          <div class="subject-boards"><span class="board-special">SEBA – Assam Board</span></div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon"><i class="fa-solid fa-atom"></i></div>
+          <h3>Science</h3>
+          <p>Physics, Chemistry, and Biology — concept-first teaching with diagram practice, numerical solving and exam-ready preparation for board exams.</p>
+          <div class="subject-boards"><span>SEBA</span><span>CBSE</span><span>ICSE</span></div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Computer Science</h3>
+          <p>Programming basics, hardware concepts, software fundamentals, and practical computing as per the Class 9 &amp; 10 board syllabus.</p>
+          <div class="subject-boards"><span>SEBA</span><span>CBSE</span><span>ICSE</span></div>
+        </div>
+      </div>
+      <div class="adv-maths-note">
+        <i class="fa-solid fa-circle-info"></i>
+        <p><strong>What is Advanced Mathematics?</strong> Advanced Mathematics is a separate mathematics paper offered by the SEBA (Assam State Board of Secondary Education) to Class 9 &amp; 10 students — distinct from the standard Mathematics paper. It covers additional topics and is only available to SEBA students. If you're on SEBA board and take Advanced Maths, I can help with both papers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFFER BANNER ===== -->
+  <div class="offer-banner">
+    <div class="container offer-inner">
+      <div class="offer-icon"><i class="fa-solid fa-gift"></i></div>
+      <div class="offer-text">
+        <strong>🎉 Inauguration Offer</strong>
+        <span>First <strong>5 students per batch</strong> get <strong>30% OFF</strong> for 3 months — Pay just ₹1,120/month instead of ₹1,600. Save ₹480 every month!</span>
+      </div>
+      <a href="#batches" class="btn btn-green btn-sm">Grab the Offer</a>
+    </div>
+  </div>
+
+  <!-- ===== BATCHES ===== -->
+  <section class="batches section" id="batches">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><i class="fa-solid fa-calendar-days"></i> Physical Classes at My Home</p>
+        <h2>Choose Your <em>Batch</em></h2>
+        <p class="section-sub">Two batches at Saleha Apartment, Katabari, Guwahati. Small groups for maximum individual attention.</p>
+      </div>
+
+      <div class="batch-cards">
+
+        <!-- BATCH 1 — Class 10 -->
+        <div class="batch-card">
+          <div class="batch-header">
+            <div class="batch-num">Batch 1</div>
+            <!-- STATUS OPTIONS: available | full   (just change the class word) -->
+            <div class="batch-status available" id="batch1-status">
+              <span class="status-dot"></span><span class="status-text"></span>
+            </div>
+          </div>
+          <div class="batch-class-tag">Class 10</div>
+          <h3>Evening Batch</h3>
+          <p class="batch-sub">Mon · Wed · Fri · Sun (Evening)</p>
+          <div class="batch-schedule">
+            <div class="schedule-row">
+              <div class="day-badges">
+                <span class="day">Mon</span><span class="day">Wed</span><span class="day">Fri</span>
+              </div>
+              <div class="time-badge"><i class="fa-regular fa-clock"></i> 5:00 PM – 7:00 PM</div>
+            </div>
+            <div class="schedule-row">
+              <div class="day-badges">
+                <span class="day sun">Sun</span><span class="day-label">Evening</span>
+              </div>
+              <div class="time-badge"><i class="fa-regular fa-clock"></i> 5:00 PM – 7:00 PM</div>
+            </div>
+          </div>
+          <div class="batch-info">
+            <div class="info-item"><i class="fa-solid fa-layer-group"></i> 4 classes/week · 16 classes/month</div>
+            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · Computer Science · Adv. Maths*</div>
+            <div class="info-item"><i class="fa-solid fa-school"></i> SEBA · CBSE · ICSE</div>
+            <div class="info-item"><i class="fa-solid fa-location-dot"></i> Saleha Apt, A.K. Dev Rd, Katabari</div>
+          </div>
+          <div class="batch-price">
+            <div class="price-regular">₹1,600 <span>/month</span></div>
+            <div class="price-offer">
+              <span class="offer-tag">Inauguration Offer</span>
+              <span class="offer-price">₹1,120 <small>/month · first 3 months</small></span>
+              <span class="offer-note">First 5 students only · ₹100/class normally</span>
+            </div>
+          </div>
+          <!-- REPLACE with your real Batch 1 Google Form URL -->
+          <a href="https://forms.gle/REPLACE_BATCH1_FORM" target="_blank" class="btn btn-yellow btn-full batch-btn">
+            Join Batch 1 <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- BATCH 2 — Class 9 -->
+        <div class="batch-card">
+          <div class="batch-header">
+            <div class="batch-num">Batch 2</div>
+            <!-- STATUS OPTIONS: available | full -->
+            <div class="batch-status available" id="batch2-status">
+              <span class="status-dot"></span><span class="status-text"></span>
+            </div>
+          </div>
+          <div class="batch-class-tag class9">Class 9</div>
+          <h3>Mixed Batch</h3>
+          <p class="batch-sub">Tue · Thu · Sat · Sun (Morning)</p>
+          <div class="batch-schedule">
+            <div class="schedule-row">
+              <div class="day-badges">
+                <span class="day">Tue</span><span class="day">Thu</span><span class="day">Sat</span>
+              </div>
+              <div class="time-badge"><i class="fa-regular fa-clock"></i> 5:00 PM – 7:00 PM</div>
+            </div>
+            <div class="schedule-row">
+              <div class="day-badges">
+                <span class="day sun">Sun</span><span class="day-label">Morning</span>
+              </div>
+              <div class="time-badge"><i class="fa-regular fa-clock"></i> 10:00 AM – 12:00 PM</div>
+            </div>
+          </div>
+          <div class="batch-info">
+            <div class="info-item"><i class="fa-solid fa-layer-group"></i> 4 classes/week · 16 classes/month</div>
+            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · Computer Science · Adv. Maths*</div>
+            <div class="info-item"><i class="fa-solid fa-school"></i> SEBA · CBSE · ICSE</div>
+            <div class="info-item"><i class="fa-solid fa-location-dot"></i> Saleha Apt, A.K. Dev Rd, Katabari</div>
+          </div>
+          <div class="batch-price">
+            <div class="price-regular">₹1,600 <span>/month</span></div>
+            <div class="price-offer">
+              <span class="offer-tag">Inauguration Offer</span>
+              <span class="offer-price">₹1,120 <small>/month · first 3 months</small></span>
+              <span class="offer-note">First 5 students only · ₹100/class normally</span>
+            </div>
+          </div>
+          <!-- REPLACE with your real Batch 2 Google Form URL -->
+          <a href="https://forms.gle/REPLACE_BATCH2_FORM" target="_blank" class="btn btn-yellow btn-full batch-btn">
+            Join Batch 2 <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- ONE-ON-ONE -->
+        <div class="batch-card oneonone-card">
+          <div class="batch-header">
+            <div class="batch-num oo-num">1-on-1</div>
+            <!-- STATUS OPTIONS: negotiable | unavailable -->
+            <div class="batch-status negotiable" id="oo-status">
+              <span class="status-dot"></span><span class="status-text"></span>
+            </div>
+          </div>
+          <div class="batch-class-tag oo-tag">Class 9 &amp; 10 · Personalised</div>
+          <h3>One-on-One Tuition</h3>
+          <p class="batch-sub">At your home · Days &amp; times by mutual agreement</p>
+          <div class="oo-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <p>Home tuition availability depends on your location and my schedule. I'll personally discuss days, timings and subjects with you before confirming. Just enquire to start the conversation.</p>
+          </div>
+          <div class="batch-info">
+            <div class="info-item"><i class="fa-solid fa-house"></i> At your home — fully flexible</div>
+            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · CS · Adv. Maths*</div>
+            <div class="info-item"><i class="fa-solid fa-school"></i> SEBA · CBSE · ICSE</div>
+          </div>
+          <div class="batch-price oo-price">
+            <div class="oo-rate">₹300 <span>/class</span></div>
+            <div class="offer-note solo-note">Schedule mutually decided · Address required in form</div>
+          </div>
+          <!-- REPLACE with your real One-on-One Google Form URL -->
+          <a href="https://forms.gle/REPLACE_OO_FORM" target="_blank" class="btn btn-green btn-full batch-btn">
+            Enquire Now <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+      <p class="batch-footnote"><i class="fa-solid fa-star" style="color:var(--yellow-dark);font-size:.85rem;"></i> <strong>*Advanced Mathematics</strong> is only available for SEBA (Assam Board) students.</p>
+    </div>
+  </section>
+
+  <!-- ===== FEES ===== -->
+  <section class="fees section" id="fees">
+    <div class="fees-bg"></div>
+    <div class="container fees-inner">
+      <div class="fees-text">
+        <p class="section-label light"><i class="fa-solid fa-indian-rupee-sign"></i> Transparent Pricing</p>
+        <h2>Simple, Honest <em>Fees</em></h2>
+        <p>No hidden charges. No confusing packages. Just straightforward pricing that respects your time and money.</p>
+        <ul class="fees-list">
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>₹100 per class — Physical Batch</strong>
+            <span>16 classes/month × ₹100 = ₹1,600/month (4 days/week, 2 hrs each)</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>₹300 per class — One-on-One</strong>
+            <span>At your home — days and frequency by mutual agreement</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-gift"></i>
+            <div><strong>30% Inauguration Discount</strong>
+            <span>First 5 students per batch pay ₹1,120/month for 3 months — save ₹480/month!</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-calendar"></i>
+            <div><strong>Starting April 2026</strong>
+            <span>Enrol early to lock in your seat and the inauguration pricing</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="fees-card-wrap">
+        <div class="fees-card">
+          <div class="fees-card-label">Physical Group Batch</div>
+          <div class="fees-normal">
+            <span class="fees-strikethrough">₹1,600</span>
+            <span class="fees-tag">Regular</span>
+          </div>
+          <div class="fees-big">₹1,120</div>
+          <div class="fees-detail">per month · first 3 months only</div>
+          <div class="fees-sub">Inauguration offer · First 5 students per batch</div>
+          <div class="fees-divider"></div>
+          <div class="fees-breakdown">
+            <div><span>Per class (offer)</span><strong>₹70</strong></div>
+            <div><span>Classes/month</span><strong>16</strong></div>
+            <div><span>Classes/week</span><strong>4</strong></div>
+            <div><span>Monthly saving</span><strong>₹480</strong></div>
+          </div>
+          <a href="#batches" class="btn btn-yellow btn-full" style="margin-top:20px;">Enrol Now</a>
+        </div>
+        <div class="fees-card fees-card-alt">
+          <div class="fees-card-label">One-on-One Tuition</div>
+          <div class="fees-big">₹300</div>
+          <div class="fees-detail">per class</div>
+          <div class="fees-sub">Flexible schedule · At your home</div>
+          <div class="fees-divider"></div>
+          <div class="fees-breakdown">
+            <div><span>Location</span><strong>Your Home</strong></div>
+            <div><span>Scheduling</span><strong>Flexible</strong></div>
+            <div><span>Curriculum</span><strong>Custom</strong></div>
+            <div><span>Availability</span><strong>Negotiable</strong></div>
+          </div>
+          <a href="https://forms.gle/REPLACE_OO_FORM" target="_blank" class="btn btn-outline-green btn-full" style="margin-top:20px;">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO JOIN ===== -->
+  <section class="how-section section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><i class="fa-solid fa-list-check"></i> Getting Started</p>
+        <h2>How to <em>Join</em></h2>
+        <p class="section-sub">Simple, transparent process — no hassle.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h4>Choose Your Batch</h4>
+          <p>Pick Batch 1 (Class 10) or Batch 2 (Class 9), or enquire about one-on-one tuition at your home.</p>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+          <h4>Fill the Google Form</h4>
+          <p>Submit your name, class, school, board, subjects, guardian's number and WhatsApp via the form.</p>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h4>Get Confirmation</h4>
+          <p>I'll reach out on WhatsApp at <strong>+91 91011 70697</strong> to confirm your seat and share details.</p>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h4>Start Learning!</h4>
+          <p>Show up on Day 1 ready to learn and begin your journey toward top marks!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-text">
+        <p class="section-label"><i class="fa-solid fa-headset"></i> Reach Out</p>
+        <h2>Have Questions? <em>Let's Talk.</em></h2>
+        <p>Feel free to reach out anytime — questions about batches, subjects, fees, or anything else. I'm happy to help.</p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+              <h4>Call Me</h4>
+              <p><a href="tel:+919101170697">+91 91011 70697</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon" style="background:#25D366;"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/919101170697?text=Hi%2C+I%27m+interested+in+Sharqi+Classes!" target="_blank">+91 91011 70697</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:sharqiclasses@gmail.com">sharqiclasses@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Address</h4>
+              <p>House No. 91, Saleha Apartment,<br/>A.K. Dev Road, Nizarapar Path,<br/>Katabari, Guwahati – 781035</p>
+            </div>
+          </div>
+        </div>
+        <div class="callback-cta-block">
+          <p>Prefer a callback? I'll call you at a time that suits you.</p>
+          <button class="btn btn-yellow callback-trigger" id="contactCallbackBtn">
+            <i class="fa-solid fa-phone-volume"></i> Request a Callback
+          </button>
+        </div>
+        <div class="contact-social">
+          <span>Follow us:</span>
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919101170697" target="_blank" class="social-btn whatsapp-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="contact-map-wrap">
+        <!--
+          REPLACE this div with a Google Maps embed iframe:
+          1. Go to maps.google.com, search: "House 91 Saleha Apartment AK Dev Road Katabari Guwahati"
+          2. Click Share → Embed a map → Copy HTML
+          3. Paste <iframe ...></iframe> here (remove this div)
+        -->
+        <div class="map-placeholder">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <strong>House No. 91, Saleha Apartment</strong>
+          <p>A.K. Dev Road, Nizarapar Path<br/>Katabari, Guwahati – 781035, Assam</p>
+          <a href="https://maps.google.com/?q=Saleha+Apartment+AK+Dev+Road+Katabari+Guwahati+781035" target="_blank" class="btn btn-green btn-sm" style="margin-top:16px;">
+            <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <!-- REPLACE src with your Cloudinary URL -->
+        <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-03-26_at_14_28_00.jpeg" alt="Sharqi Classes" class="footer-logo-img" />
+        <p>Expert home tuition for Class 9 &amp; 10 in Maths, Science, Computer Science &amp; Advanced Maths. New batches starting April 2026. Katabari, Guwahati.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/919101170697" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#batches">Batches</a>
+        <a href="#fees">Fees &amp; Offers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Programmes</h4>
+        <a href="#batches">Batch 1 – Class 10</a>
+        <a href="#batches">Batch 2 – Class 9</a>
+        <a href="#batches">One-on-One Tuition</a>
+        <a href="#subjects">Mathematics</a>
+        <a href="#subjects">Science</a>
+        <a href="#subjects">Computer Science</a>
+        <a href="#subjects">Advanced Maths (SEBA)</a>
+      </div>
+      <div class="footer-contact-col">
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+919101170697" style="color:inherit;">+91 91011 70697</a></p>
+        <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/919101170697" target="_blank" style="color:inherit;">+91 91011 70697</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:sharqiclasses@gmail.com" style="color:inherit;">sharqiclasses@gmail.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> House No. 91, Saleha Apartment, A.K. Dev Road, Katabari – 781035</p>
+        <p><i class="fa-solid fa-calendar"></i> Batches starting April 2026</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Sharqi Classes. All rights reserved.</p>
+        <p class="footer-domain">sharqiclasses.in</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/919101170697?text=Hi!+I%27m+interested+in+Sharqi+Classes." target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">Chat with us!</span>
+  </a>
+
+  <!-- Callback Float -->
+  <button class="callback-float callback-trigger" id="callbackFloatBtn" aria-label="Request a Callback">
+    <i class="fa-solid fa-phone-volume"></i>
+    <span class="callback-float-label">Callback</span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
