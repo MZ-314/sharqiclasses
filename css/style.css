@@ -965,13 +965,16 @@ em { font-style: normal; color: var(--green); }
   .navbar { position: relative; }
   /* Hero mobile fix */
   .hero { min-height: 100svh; min-height: 100vh; }
-  .hero-inner { padding: 72px 0 80px; }
-  .hero-text h1 { max-width: 100%; font-size: clamp(2rem, 8vw, 2.8rem); }
-  .hero-text p { max-width: 100%; font-size: 0.95rem; }
-  .hero-badge { font-size: 0.72rem; padding: 7px 14px; }
-  .hero-offer-pill { font-size: 0.8rem; padding: 10px 16px; width: 100%; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-inner { padding: 72px 0 80px; width: 100%; box-sizing: border-box; }
+  .hero-text { width: 100%; max-width: 100%; box-sizing: border-box; }
+  .hero-text h1 { max-width: 100%; width: 100%; font-size: clamp(1.8rem, 7vw, 2.6rem); word-break: break-word; }
+  .hero-text p { max-width: 100%; width: 100%; font-size: 0.92rem; }
+  .hero-badge { font-size: 0.68rem; padding: 6px 12px; max-width: 100%; white-space: normal; }
+  .hero-offer-pill { font-size: 0.78rem; padding: 10px 14px; width: 100%; box-sizing: border-box; }
+  .hero-offer-pill span { font-size: 0.78rem; }
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions .btn { width: 100%; justify-content: center; box-sizing: border-box; }
+  .slide-dots { bottom: 16px; }
   /* About */
   .about-inner { grid-template-columns: 1fr; gap: 40px; }
   .about-photo-wrap { max-width: 280px; margin: 0 auto; }
@@ -997,9 +1000,11 @@ em { font-style: normal; color: var(--green); }
   .offer-text { flex-direction: column; }
 }
 @media (max-width: 480px) {
-  .hero-actions { flex-direction: column; }
+  .hero-actions { flex-direction: column; width: 100%; }
   .btn-lg { width: 100%; justify-content: center; }
-  .hero-offer-pill { font-size: 0.8rem; }
+  .hero-text h1 { font-size: clamp(1.6rem, 6.5vw, 2.2rem); }
+  .hero-badge { font-size: 0.63rem; padding: 6px 10px; letter-spacing: 0.04em; }
+  .hero-offer-pill { font-size: 0.74rem; padding: 9px 12px; }
   .fees-card-wrap { flex-direction: column; }
   .footer-inner { grid-template-columns: 1fr; }
 }
