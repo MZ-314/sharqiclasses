@@ -331,6 +331,19 @@ em { font-style: normal; color: var(--green); }
 /* When you have a real photo, use this instead:
    .about-photo-placeholder { display: none; }
    .about-real-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 24px 4px 24px 4px; }
+
+/* Qualification line under tutor name */
+.about-qualification {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green-light);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  padding: 12px 16px;
+  background: var(--yellow-pale);
+  border-left: 3px solid var(--yellow-dark);
+  border-radius: 0 8px 8px 0;
+}
 */
 .about-photo-placeholder i { font-size: 4rem; opacity: 0.5; }
 .about-accent-block {
@@ -1002,12 +1015,7 @@ em { font-style: normal; color: var(--green); }
   align-items: center;
   gap: 10px;
 }
-.btn-outline-green {
-  background: transparent;
-  color: var(--green);
-  border: 2px solid var(--green);
-}
-.btn-outline-green:hover { background: var(--green); color: var(--yellow); }
+/* btn-outline-green is already defined in the main button block above */
 
 /* ---- Subjects Section ---- */
 .subjects { position: relative; overflow: hidden; }
