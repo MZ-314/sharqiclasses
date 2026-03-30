@@ -2,11 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="google-site-verification" content="u0qJXhKNJVYQnzw7PWGQP2bfayVKNOKZingyM6DDPKA" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===== PRIMARY SEO ===== -->
@@ -230,7 +225,7 @@
       <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80')"></div>
       <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=80')"></div>
       <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1600&q=80')"></div>
-      <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dsnjmkotw/image/upload/v1774603518/WhatsApp_Image_2026-03-27_at_14.54.02_vmy40g.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80')"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
@@ -353,9 +348,9 @@
       <div class="offer-icon"><i class="fa-solid fa-gift"></i></div>
       <div class="offer-text">
         <strong>🎉 Inauguration Offer</strong>
-        <span>First <strong>5 students per batch</strong> get <strong>30% OFF</strong> for 3 months — Pay just ₹1,120/month instead of ₹1,600. Save ₹480 every month!</span>
+        <span>First <strong>5 students per batch</strong> get <strong>30% OFF</strong> for 3 months — Pay just ₹1,008/month instead of ₹1,440 for 3 subjects!</span>
       </div>
-      <a href="#batches" class="btn btn-green btn-sm">Grab the Offer</a>
+      <a href="#enroll" class="btn btn-green btn-sm">Grab the Offer</a>
     </div>
   </div>
 
@@ -365,7 +360,7 @@
       <div class="section-header">
         <p class="section-label"><i class="fa-solid fa-calendar-days"></i> Physical Classes at My Home</p>
         <h2>Choose Your <em>Batch</em></h2>
-        <p class="section-sub">Two batches at Saleha Apartment, Katabari, Guwahati. Small groups for maximum individual attention.</p>
+        <p class="section-sub">Two batches at Saleha Apartment, Katabari. Each day has two 1-hour slots — your timetable depends on your board and subjects.</p>
       </div>
 
       <div class="batch-cards">
@@ -374,7 +369,7 @@
         <div class="batch-card">
           <div class="batch-header">
             <div class="batch-num">Batch 1</div>
-            <!-- STATUS OPTIONS: available | full   (just change the class word) -->
+            <!-- STATUS OPTIONS: available | full -->
             <div class="batch-status available" id="batch1-status">
               <span class="status-dot"></span><span class="status-text"></span>
             </div>
@@ -382,36 +377,66 @@
           <div class="batch-class-tag">Class 10</div>
           <h3>Evening Batch</h3>
           <p class="batch-sub">Mon · Wed · Fri · Sun (Evening)</p>
-          <div class="batch-schedule">
-            <div class="schedule-row">
-              <div class="day-badges">
-                <span class="day">Mon</span><span class="day">Wed</span><span class="day">Fri</span>
-              </div>
-              <div class="time-badge"><i class="fa-regular fa-clock"></i> 5:00 PM – 7:00 PM</div>
+
+          <div class="batch-timetable">
+            <div class="tt-row tt-header">
+              <div class="tt-day">Day</div>
+              <div class="tt-slot">5:00 – 6:00 PM</div>
+              <div class="tt-slot">6:00 – 7:00 PM</div>
             </div>
-            <div class="schedule-row">
-              <div class="day-badges">
-                <span class="day sun">Sun</span><span class="day-label">Evening</span>
-              </div>
-              <div class="time-badge"><i class="fa-regular fa-clock"></i> 5:00 PM – 7:00 PM</div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day">Mon</span></div>
+              <div class="tt-slot tt-all">Maths <span class="tt-board">All boards</span></div>
+              <div class="tt-slot tt-seba">Adv. Maths <span class="tt-board">SEBA elective</span></div>
+            </div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day">Wed</span></div>
+              <div class="tt-slot tt-all">Science <span class="tt-board">All boards</span></div>
+              <div class="tt-slot tt-comp">Comp. Science <span class="tt-board">CBSE/ICSE + SEBA elective</span></div>
+            </div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day">Fri</span></div>
+              <div class="tt-slot tt-all">Maths <span class="tt-board">All boards</span></div>
+              <div class="tt-slot tt-seba">Adv. Maths <span class="tt-board">SEBA elective</span></div>
+            </div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day sun">Sun</span></div>
+              <div class="tt-slot tt-all">Science <span class="tt-board">All boards</span></div>
+              <div class="tt-slot tt-comp">Comp. Science <span class="tt-board">CBSE/ICSE + SEBA elective</span></div>
             </div>
           </div>
-          <div class="batch-info">
-            <div class="info-item"><i class="fa-solid fa-layer-group"></i> 4 classes/week · 16 classes/month</div>
-            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · Computer Science · Adv. Maths*</div>
-            <div class="info-item"><i class="fa-solid fa-school"></i> SEBA · CBSE · ICSE</div>
+
+          <div class="tt-cases">
+            <p class="tt-cases-label"><i class="fa-solid fa-user"></i> Your attendance depends on your subjects:</p>
+            <div class="tt-case">
+              <span class="tt-case-tag seba-adv">SEBA + Adv. Maths</span>
+              <span>Mon 5–7 · Wed 5–6 · Fri 5–7 · Sun 5–6</span>
+            </div>
+            <div class="tt-case">
+              <span class="tt-case-tag seba-comp">SEBA + Comp. Sci</span>
+              <span>Mon 5–6 · Wed 5–7 · Fri 5–6 · Sun 5–7</span>
+            </div>
+            <div class="tt-case">
+              <span class="tt-case-tag cbse-icse">CBSE / ICSE</span>
+              <span>Mon 5–6 · Wed 5–7 · Fri 5–6 · Sun 5–7</span>
+            </div>
+          </div>
+
+          <div class="batch-info" style="margin-top:16px;">
+            <div class="info-item"><i class="fa-solid fa-layer-group"></i> 24 classes/month · ₹60/class · ₹1,440/month</div>
             <div class="info-item"><i class="fa-solid fa-location-dot"></i> Saleha Apt, A.K. Dev Rd, Katabari</div>
           </div>
+
           <div class="batch-price">
-            <div class="price-regular">₹1,600 <span>/month</span></div>
+            <div class="price-regular">₹1,440 <span>/month (3 subjects)</span></div>
             <div class="price-offer">
               <span class="offer-tag">Inauguration Offer</span>
-              <span class="offer-price">₹1,120 <small>/month · first 3 months</small></span>
-              <span class="offer-note">First 5 students only · ₹100/class normally</span>
+              <span class="offer-price">₹1,008 <small>/month · first 3 months</small></span>
+              <span class="offer-note">First 5 students only · 30% off</span>
             </div>
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEKENWj0Vr510VfLYGYroFRt2WDMYGThVshMACAF6-4Qm1Bg/viewform?usp=sharing" target="_blank" class="btn btn-yellow btn-full batch-btn">
-            Join Batch 1 <i class="fa-solid fa-arrow-right"></i>
+          <a href="#enroll" class="btn btn-yellow btn-full batch-btn" onclick="document.getElementById('enroll-batch').value='batch1'">
+            Enrol in Batch 1 <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
@@ -427,36 +452,66 @@
           <div class="batch-class-tag class9">Class 9</div>
           <h3>Mixed Batch</h3>
           <p class="batch-sub">Tue · Thu · Sat · Sun (Morning)</p>
-          <div class="batch-schedule">
-            <div class="schedule-row">
-              <div class="day-badges">
-                <span class="day">Tue</span><span class="day">Thu</span><span class="day">Sat</span>
-              </div>
-              <div class="time-badge"><i class="fa-regular fa-clock"></i> 5:00 PM – 7:00 PM</div>
+
+          <div class="batch-timetable">
+            <div class="tt-row tt-header">
+              <div class="tt-day">Day</div>
+              <div class="tt-slot">Slot 1</div>
+              <div class="tt-slot">Slot 2</div>
             </div>
-            <div class="schedule-row">
-              <div class="day-badges">
-                <span class="day sun">Sun</span><span class="day-label">Morning</span>
-              </div>
-              <div class="time-badge"><i class="fa-regular fa-clock"></i> 10:00 AM – 12:00 PM</div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day">Tue</span></div>
+              <div class="tt-slot tt-all">Maths <span class="tt-board">5–6 PM · All boards</span></div>
+              <div class="tt-slot tt-seba">Adv. Maths <span class="tt-board">6–7 PM · SEBA elective</span></div>
+            </div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day">Thu</span></div>
+              <div class="tt-slot tt-all">Science <span class="tt-board">5–6 PM · All boards</span></div>
+              <div class="tt-slot tt-comp">Comp. Science <span class="tt-board">6–7 PM · CBSE/ICSE + SEBA</span></div>
+            </div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day">Sat</span></div>
+              <div class="tt-slot tt-all">Maths <span class="tt-board">5–6 PM · All boards</span></div>
+              <div class="tt-slot tt-seba">Adv. Maths <span class="tt-board">6–7 PM · SEBA elective</span></div>
+            </div>
+            <div class="tt-row">
+              <div class="tt-day"><span class="day sun">Sun</span></div>
+              <div class="tt-slot tt-all">Science <span class="tt-board">10–11 AM · All boards</span></div>
+              <div class="tt-slot tt-comp">Comp. Science <span class="tt-board">11–12 PM · CBSE/ICSE + SEBA</span></div>
             </div>
           </div>
-          <div class="batch-info">
-            <div class="info-item"><i class="fa-solid fa-layer-group"></i> 4 classes/week · 16 classes/month</div>
-            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · Computer Science · Adv. Maths*</div>
-            <div class="info-item"><i class="fa-solid fa-school"></i> SEBA · CBSE · ICSE</div>
+
+          <div class="tt-cases">
+            <p class="tt-cases-label"><i class="fa-solid fa-user"></i> Your attendance depends on your subjects:</p>
+            <div class="tt-case">
+              <span class="tt-case-tag seba-adv">SEBA + Adv. Maths</span>
+              <span>Tue 5–7 · Thu 5–6 · Sat 5–7 · Sun 10–11</span>
+            </div>
+            <div class="tt-case">
+              <span class="tt-case-tag seba-comp">SEBA + Comp. Sci</span>
+              <span>Tue 5–6 · Thu 5–7 · Sat 5–6 · Sun 10–12</span>
+            </div>
+            <div class="tt-case">
+              <span class="tt-case-tag cbse-icse">CBSE / ICSE</span>
+              <span>Tue 5–6 · Thu 5–7 · Sat 5–6 · Sun 10–12</span>
+            </div>
+          </div>
+
+          <div class="batch-info" style="margin-top:16px;">
+            <div class="info-item"><i class="fa-solid fa-layer-group"></i> 24 classes/month · ₹60/class · ₹1,440/month</div>
             <div class="info-item"><i class="fa-solid fa-location-dot"></i> Saleha Apt, A.K. Dev Rd, Katabari</div>
           </div>
+
           <div class="batch-price">
-            <div class="price-regular">₹1,600 <span>/month</span></div>
+            <div class="price-regular">₹1,440 <span>/month (3 subjects)</span></div>
             <div class="price-offer">
               <span class="offer-tag">Inauguration Offer</span>
-              <span class="offer-price">₹1,120 <small>/month · first 3 months</small></span>
-              <span class="offer-note">First 5 students only · ₹100/class normally</span>
+              <span class="offer-price">₹1,008 <small>/month · first 3 months</small></span>
+              <span class="offer-note">First 5 students only · 30% off</span>
             </div>
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSccy8vToQBHj_o3i3aYMZvvEkHiwnCkMUAC8oIomE-1ZITnqw/viewform?usp=publish-editor" target="_blank" class="btn btn-yellow btn-full batch-btn">
-            Join Batch 2 <i class="fa-solid fa-arrow-right"></i>
+          <a href="#enroll" class="btn btn-yellow btn-full batch-btn" onclick="document.getElementById('enroll-batch').value='batch2'">
+            Enrol in Batch 2 <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
 
@@ -478,12 +533,12 @@
           </div>
           <div class="batch-info">
             <div class="info-item"><i class="fa-solid fa-house"></i> At your home — fully flexible</div>
-            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · CS · Adv. Maths*</div>
+            <div class="info-item"><i class="fa-solid fa-book"></i> Maths · Science · CS · Adv. Maths</div>
             <div class="info-item"><i class="fa-solid fa-school"></i> SEBA · CBSE · ICSE</div>
           </div>
           <div class="batch-price oo-price">
             <div class="oo-rate">₹300 <span>/class</span></div>
-            <div class="offer-note solo-note">Schedule mutually decided · Address required in form</div>
+            <div class="offer-note solo-note">Schedule mutually decided · Address required</div>
           </div>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLScpwzDWL5seyoOR8_S7z5TtXH7WikPhJLrR0EJPSEiKym-zSg/viewform?usp=publish-editor" target="_blank" class="btn btn-green btn-full batch-btn">
             Enquire Now <i class="fa-solid fa-arrow-right"></i>
@@ -491,7 +546,7 @@
         </div>
 
       </div>
-      <p class="batch-footnote"><i class="fa-solid fa-star" style="color:var(--yellow-dark);font-size:.85rem;"></i> <strong>*Advanced Mathematics</strong> is only available for SEBA (Assam Board) students.</p>
+      <p class="batch-footnote"><i class="fa-solid fa-star" style="color:var(--yellow-dark);font-size:.85rem;"></i> <strong>Advanced Mathematics</strong> is a SEBA elective — chosen in Class 8. SEBA students pick either Adv. Maths or Computer Science, not both.</p>
     </div>
   </section>
 
@@ -502,48 +557,49 @@
       <div class="fees-text">
         <p class="section-label light"><i class="fa-solid fa-indian-rupee-sign"></i> Transparent Pricing</p>
         <h2>Simple, Honest <em>Fees</em></h2>
-        <p>No hidden charges. No confusing packages. Just straightforward pricing that respects your time and money.</p>
+        <p>₹60 per class, per subject. Your monthly fee scales with how many subjects you take — fair and simple.</p>
         <ul class="fees-list">
           <li>
             <i class="fa-solid fa-check"></i>
-            <div><strong>₹100 per class — Physical Batch</strong>
-            <span>16 classes/month × ₹100 = ₹1,600/month (4 days/week, 2 hrs each)</span></div>
+            <div><strong>₹480/month — 1 subject</strong>
+            <span>8 classes/month × ₹60 per class</span></div>
           </li>
           <li>
             <i class="fa-solid fa-check"></i>
-            <div><strong>₹300 per class — One-on-One</strong>
-            <span>At your home — days and frequency by mutual agreement</span></div>
+            <div><strong>₹960/month — 2 subjects</strong>
+            <span>16 classes/month × ₹60 per class</span></div>
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>₹1,440/month — 3 subjects</strong>
+            <span>24 classes/month × ₹60 per class</span></div>
           </li>
           <li>
             <i class="fa-solid fa-gift"></i>
             <div><strong>30% Inauguration Discount</strong>
-            <span>First 5 students per batch pay ₹1,120/month for 3 months — save ₹480/month!</span></div>
+            <span>First 5 students per batch — valid for first 3 months only</span></div>
           </li>
           <li>
-            <i class="fa-solid fa-calendar"></i>
-            <div><strong>Starting April 2026</strong>
-            <span>Enrol early to lock in your seat and the inauguration pricing</span></div>
+            <i class="fa-solid fa-check"></i>
+            <div><strong>₹300/class — One-on-One</strong>
+            <span>At your home · Flexible days and frequency</span></div>
           </li>
         </ul>
       </div>
       <div class="fees-card-wrap">
         <div class="fees-card">
-          <div class="fees-card-label">Physical Group Batch</div>
-          <div class="fees-normal">
-            <span class="fees-strikethrough">₹1,600</span>
-            <span class="fees-tag">Regular</span>
-          </div>
-          <div class="fees-big">₹1,120</div>
-          <div class="fees-detail">per month · first 3 months only</div>
-          <div class="fees-sub">Inauguration offer · First 5 students per batch</div>
+          <div class="fees-card-label">Group Batch — Per Subject</div>
+          <div class="fees-big" style="font-size:2rem;">₹60 <span style="font-size:1rem;font-weight:500;color:var(--text-muted);">/class</span></div>
+          <div class="fees-detail">8 classes/month per subject</div>
+          <div class="fees-sub">Inauguration: 30% off for first 5 students</div>
           <div class="fees-divider"></div>
           <div class="fees-breakdown">
-            <div><span>Per class (offer)</span><strong>₹70</strong></div>
-            <div><span>Classes/month</span><strong>16</strong></div>
-            <div><span>Classes/week</span><strong>4</strong></div>
-            <div><span>Monthly saving</span><strong>₹480</strong></div>
+            <div><span>1 subject</span><strong>₹480/mo</strong></div>
+            <div><span>2 subjects</span><strong>₹960/mo</strong></div>
+            <div><span>3 subjects</span><strong>₹1,440/mo</strong></div>
+            <div><span>Offer (3 sub)</span><strong>₹1,008/mo</strong></div>
           </div>
-          <a href="#batches" class="btn btn-yellow btn-full" style="margin-top:20px;">Enrol Now</a>
+          <a href="#enroll" class="btn btn-yellow btn-full" style="margin-top:20px;">Calculate My Fee</a>
         </div>
         <div class="fees-card fees-card-alt">
           <div class="fees-card-label">One-on-One Tuition</div>
@@ -563,41 +619,136 @@
     </div>
   </section>
 
-  <!-- ===== HOW TO JOIN ===== -->
-  <section class="how-section section">
+  <!-- ===== ENROLL FORM ===== -->
+  <section class="enroll-section section" id="enroll">
     <div class="container">
       <div class="section-header">
-        <p class="section-label"><i class="fa-solid fa-list-check"></i> Getting Started</p>
-        <h2>How to <em>Join</em></h2>
-        <p class="section-sub">Simple, transparent process — no hassle.</p>
+        <p class="section-label"><i class="fa-solid fa-pen-to-square"></i> Get Started</p>
+        <h2>Enrol <em>Now</em></h2>
+        <p class="section-sub">Fill in your details below. Your timetable and fee summary will be generated automatically.</p>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <h4>Choose Your Batch</h4>
-          <p>Pick Batch 1 (Class 10) or Batch 2 (Class 9), or enquire about one-on-one tuition at your home.</p>
-        </div>
-        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
-          <h4>Fill the Google Form</h4>
-          <p>Submit your name, class, school, board, subjects, guardian's number and WhatsApp via the form.</p>
-        </div>
-        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
-          <h4>Get Confirmation</h4>
-          <p>I'll reach out on WhatsApp at <strong>+91 91011 70697</strong> to confirm your seat and share details.</p>
-        </div>
-        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
-          <h4>Start Learning!</h4>
-          <p>Show up on Day 1 ready to learn and begin your journey toward top marks!</p>
+
+      <div class="enroll-wrap">
+        <form class="enroll-form-card" id="enrollForm"
+          action="https://formsubmit.co/sharqiclasses@gmail.com"
+          method="POST">
+          <input type="hidden" name="_subject" value="New Enrolment – Sharqi Classes" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_autoresponse" value="Hi! Thanks for enrolling with Sharqi Classes. I've received your details and will reach out on WhatsApp soon to confirm your seat. – Mustafiz Ahmed, Sharqi Classes" />
+          <input type="hidden" name="Timetable" id="hidden-timetable" value="" />
+          <input type="hidden" name="Monthly Fee" id="hidden-fee" value="" />
+
+          <!-- STEP 1: Batch -->
+          <div class="enroll-step" id="step1">
+            <div class="step-label"><span class="step-badge">1</span> Select Your Batch</div>
+            <div class="batch-select-cards">
+              <label class="batch-select-card" id="card-batch1">
+                <input type="radio" name="Batch" id="enroll-batch" value="Batch 1 – Class 10 (Mon/Wed/Fri/Sun Evening)" required />
+                <div class="bsc-inner">
+                  <div class="bsc-tag">Class 10</div>
+                  <strong>Batch 1</strong>
+                  <span>Mon · Wed · Fri · Sun Evening</span>
+                </div>
+              </label>
+              <label class="batch-select-card" id="card-batch2">
+                <input type="radio" name="Batch" value="Batch 2 – Class 9 (Tue/Thu/Sat/Sun Morning)" />
+                <div class="bsc-inner">
+                  <div class="bsc-tag bsc-tag9">Class 9</div>
+                  <strong>Batch 2</strong>
+                  <span>Tue · Thu · Sat · Sun Morning</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: Personal details -->
+          <div class="enroll-step" id="step2">
+            <div class="step-label"><span class="step-badge">2</span> Your Details</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Student's Full Name <span class="req">*</span></label>
+                <input type="text" name="Student Name" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label>School Name <span class="req">*</span></label>
+                <input type="text" name="School" placeholder="School name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Guardian's Phone <span class="req">*</span></label>
+                <input type="tel" name="Guardian Phone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+              <div class="form-group">
+                <label>WhatsApp Number <span class="req">*</span></label>
+                <input type="tel" name="WhatsApp" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Board -->
+          <div class="enroll-step" id="step3">
+            <div class="step-label"><span class="step-badge">3</span> Select Your Board</div>
+            <div class="board-select-cards">
+              <label class="board-card">
+                <input type="radio" name="Board" value="SEBA" id="board-seba" required />
+                <span>SEBA</span><small>Assam Board</small>
+              </label>
+              <label class="board-card">
+                <input type="radio" name="Board" value="CBSE" id="board-cbse" />
+                <span>CBSE</span><small>Central Board</small>
+              </label>
+              <label class="board-card">
+                <input type="radio" name="Board" value="ICSE" id="board-icse" />
+                <span>ICSE</span><small>Council</small>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 4: Subjects (dynamic) -->
+          <div class="enroll-step" id="step4" style="display:none;">
+            <div class="step-label"><span class="step-badge">4</span> Select Your Subjects
+              <span class="subject-hint" id="subject-hint"></span>
+            </div>
+            <div class="subject-select-grid" id="subjectGrid"></div>
+            <p class="seba-elective-note" id="sebaNote" style="display:none;">
+              <i class="fa-solid fa-circle-info"></i>
+              SEBA students choose either <strong>Advanced Maths</strong> or <strong>Computer Science</strong> as their elective — not both. Selecting one will deselect the other.
+            </p>
+          </div>
+
+          <!-- STEP 5: Fee meter + timetable -->
+          <div class="enroll-step" id="step5" style="display:none;">
+            <div class="step-label"><span class="step-badge">5</span> Your Fee &amp; Timetable</div>
+            <div class="fee-meter">
+              <div class="fee-meter-left">
+                <div class="fee-label">Monthly Fee</div>
+                <div class="fee-amount" id="feeAmount">₹0</div>
+                <div class="fee-detail" id="feeDetail">Select subjects above</div>
+                <div class="fee-offer" id="feeOffer" style="display:none;">
+                  <i class="fa-solid fa-tag"></i>
+                  <span>Inauguration offer: <strong id="feeOfferAmount"></strong>/month for first 3 months</span>
+                </div>
+              </div>
+              <div class="fee-meter-right">
+                <div class="fee-breakdown-mini" id="feeBreakdown"></div>
+              </div>
+            </div>
+            <div class="timetable-preview" id="timetablePreview"></div>
+          </div>
+
+          <button type="submit" class="btn btn-yellow btn-full enroll-submit" id="enrollSubmitBtn" style="display:none;">
+            <i class="fa-solid fa-paper-plane"></i> Confirm Enrolment
+          </button>
+          <p class="form-note" id="enrollNote" style="display:none;"><i class="fa-solid fa-lock"></i> Your details are private. I'll reach out on WhatsApp to confirm your seat.</p>
+        </form>
+
+        <div class="enroll-success" id="enrollSuccess" style="display:none;">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>You're enrolled!</h3>
+          <p>I've received your details and will reach out on WhatsApp at your number to confirm your seat shortly.</p>
+          <p style="margin-top:12px;">Can also message me directly: <a href="https://wa.me/919101170697" target="_blank">+91 91011 70697</a></p>
         </div>
       </div>
     </div>
@@ -661,15 +812,14 @@
           2. Click Share → Embed a map → Copy HTML
           3. Paste <iframe ...></iframe> here (remove this div)
         -->
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d266.25699744226506!2d91.71673500930807!3d26.121339729124582!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5de9a3279927%3A0x6dc61844643a57e2!2sSharqi%20Classes!5e0!3m2!1sen!2sin!4v1774611785280!5m2!1sen!2sin" 
-          width="100%" 
-          height="450" 
-          style="border:0; border-radius:16px;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <div class="map-placeholder">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <strong>House No. 91, Saleha Apartment</strong>
+          <p>A.K. Dev Road, Nizarapar Path<br/>Katabari, Guwahati – 781035, Assam</p>
+          <a href="https://maps.google.com/?q=Saleha+Apartment+AK+Dev+Road+Katabari+Guwahati+781035" target="_blank" class="btn btn-green btn-sm" style="margin-top:16px;">
+            <i class="fa-solid fa-diamond-turn-right"></i> Open in Google Maps
+          </a>
+        </div>
       </div>
     </div>
   </section>
